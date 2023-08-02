@@ -1,8 +1,5 @@
 //
-//  main.c
-//  cstuff
-//
-//  Created by Dan Whitehouse on 28/07/2023.
+//  hello.c
 //
 
 #include <stdio.h>

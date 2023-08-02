@@ -1,25 +1,22 @@
 //
 //  temperatures.c
-//  cstuff
-//
-//  Created by Dan Whitehouse on 31/07/2023.
 //
 
 #include <stdio.h>
 
-/* Print Faranheit Celcius table */
+/* Print Faranheit Celsius table */
 
 int main ()
 {
-    int fahr, celcius;
+    int fahr, celsius;
     int lower, upper, step;
     lower = 0;
     upper = 300;
     step = 20;
     fahr = lower;
     while (fahr <= upper) {
-        celcius = 5 * (fahr - 32) / 9;
-        printf("%d\t%d\n", fahr, celcius);
+        celsius = 5 * (fahr - 32) / 9;
+        printf("%3d\t%6d\n", fahr, celsius);
         fahr = fahr + step;
     }
 }
