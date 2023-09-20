@@ -23,6 +23,6 @@ int main()
             count = 0;
         }
     }
-    for (int i = 0; i < BUFFER; ++i)
-        printf("%d\n", histogram[i]);
+    for (int i = 1; i < BUFFER; ++i)
+        printf("%d\t%d\n", i, histogram[i]);
 }
