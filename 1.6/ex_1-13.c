@@ -12,17 +12,24 @@ int main()
         if (c == ' ' || c == '\t' || c == '\n') {
             if (inspace == 0) {
                 inspace = 1;
-                putchar('\n');
             }
         } else {
             inspace = 0;
             ++count;
         }
-        if (inspace ==1) {
+        if (inspace == 1) {
             ++histogram[count];
             count = 0;
         }
     }
-    for (int i = 1; i < BUFFER; ++i)
-        printf("%d\t%d\n", i, histogram[i]);
+    for (int i = 1; i < BUFFER; ++i) {
+        printf("%d\t%d", i, histogram[i]);
+        putchar('\t');
+        if (histogram[i] >= 1) {
+           for (int j = 1; j <= histogram[i]; j++) {
+               putchar('*');
+           }
+        }
+        putchar('\n');
+    }
 }
