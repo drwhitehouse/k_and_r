@@ -21,7 +21,6 @@ int main()
         }    
     if (max > 0) /* there was a line */
         printf("%s", longest);
-        printf("line length: ");
         printf("%d\n", max);
     return 0;
 }
@@ -42,6 +41,10 @@ int my_getline(char s[], int lim)
 }
 
 /* copy: copy 'from' into 'to' - assume 'to' is big enough */
+
+/* 'to[]' and 'from[]' are pointers to the first element of the arrays that are passed to this function.
+   i.e. 'to[]' points to 'longest', and 'from[]' points to 'line'
+   printing the values using a '%p' format string should confirm this */
 
 void copy(char to[], char from[])
 {
