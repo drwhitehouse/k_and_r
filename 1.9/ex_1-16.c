@@ -12,9 +12,15 @@ int main()
     int max;                /* max length so far */
     char line[MAXLINE];     /* current input length */
     char longest[MAXLINE];  /* longest line saved here */
+    int c;                  /* temp var for very long line reading */
 
     max = 0;
     while ((len = my_getline(line, MAXLINE)) > 0)
+        if (line[len-1] != '\n') {
+            while((c=getchar()) !=EOF && c!='\n')
+                ++len; 
+        } 
+        printf("%d\n", len);
         if (len > max) {
             max = len;
             copy(longest, line);
