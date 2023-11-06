@@ -15,7 +15,7 @@ int main()
     int c;                  /* temp var for very long line reading */
 
     max = 0;
-    while ((len = my_getline(line, MAXLINE)) > 0)
+    while ((len = my_getline(line, MAXLINE)) > 0) {
         if (line[len-1] != '\n') {
             while((c=getchar()) !=EOF && c!='\n')
                 ++len; 
@@ -24,7 +24,8 @@ int main()
         if (len > max) {
             max = len;
             copy(longest, line);
-        }    
+        }
+    }    
     if (max > 0) /* there was a line */
         printf("%s", longest);
     return 0;
