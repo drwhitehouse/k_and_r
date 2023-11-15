@@ -4,8 +4,7 @@
 int my_getline(char line[], int maxline);
 void copy(char to[], char from[]);
 
-/* print longest input line (up to MAXLINE) */
-/* print the correct length (even if > MAXLINE) */
+/* print lines longer than 80 chars */
 
 int main()
 {
@@ -21,15 +20,10 @@ int main()
             while((c=getchar()) !=EOF && c!='\n')
                 ++len; 
         } 
-        printf("%d\n", len);
-        if (len > max) {
-            max = len;
-            copy(longest, line);
+        if (len > 80) {
+            printf("%s", line);
         }
     }    
-    if (max > 0) /* there was a line */
-        printf("%s", longest);
-    return 0;
 }
 
 /* my_getline: read a line into s, return length */
@@ -45,18 +39,4 @@ int my_getline(char s[], int lim)
     }
     s[i] = '\0';
     return i;
-}
-
-/* copy: copy 'from' into 'to' - assume 'to' is big enough */
-
-/* 'to[]' and 'from[]' are pointers to the first element of the arrays that are passed to this function.
-   i.e. 'to[]' points to 'longest', and 'from[]' points to 'line'
-   printing the values using a '%p' format string should confirm this */
-
-void copy(char to[], char from[])
-{
-    int i;
-    i = 0;
-    while ((to[i] = from[i]) != '\0')
-        ++i;
 }
