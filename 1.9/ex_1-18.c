@@ -3,15 +3,17 @@
 
 int my_getline(char line[], int maxline);
 
-/* print lines longer than 80 chars */
+/* remove trailing blanks, tabs, blank lines and print lines */
 
 int main()
 {
     int len;                /* current line length */
+    int max;                /* max length so far */
     char line[MAXLINE];     /* current input length */
     char longest[MAXLINE];  /* longest line saved here */
     int c;                  /* temp var for very long line reading */
 
+    max = 0;
     while ((len = my_getline(line, MAXLINE)) > 0) {
         if (line[len-1] != '\n') {
             while((c=getchar()) !=EOF && c!='\n')

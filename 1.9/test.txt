@@ -1,3 +1,4 @@
-*
-**
-*****************************************************************************************************
+The line below is blank.
+
+This line has some trailing white space which should be removed.            
+This line has a trailing tab which should be removed.   
